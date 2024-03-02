@@ -1,0 +1,17 @@
+﻿
+@model HomeIndexViewModel
+
+@*This is the Index of the view Home. with two partial views*@
+    @*Insert partial and model for the partial view a Model.Showcase is inserted for all the variables in the html code*@
+    @await Html.PartialAsync("~/Views/Shared/Sections/_Showcase.cshtml", Model.Showcase)
+
+
+<div id="features">
+    @await Html.PartialAsync("~/Views/Shared/Sections/_Features.cshtml")
+</div>
+    
+
+@* 
+<div id="showcase">
+    <partial name="~/Views/Shared/Sections/_Showcase.cshtml" />
+</div> *@
