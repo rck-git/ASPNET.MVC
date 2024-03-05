@@ -1,3 +1,59 @@
-﻿features{
+﻿.features {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: $theme-opacity;
+    margin-top: 3rem;
 
+
+    .container {
+        margin: 5rem 0;
+
+
+        h1 {
+        }
+
+        p {
+        }
+
+        .tool-features {
+            outline: 3px solid rgb(244 243 254);
+            outline-offset: -3px;
+
+            @include md {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+
+            .feature {
+                border: 1px solid $theme-opacity;
+                display: flex;
+                flex-direction: column;
+
+                &:hover {
+                    background-color: $white;
+                    transition: ease-in 0.3s;
+                }
+
+                img {
+                    margin: 2rem;
+                    width: 20%;
+                    align-self: center;
+                    justify-self: center;
+                }
+
+                h5 {
+                    align-self: center;
+                }
+
+
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
 }

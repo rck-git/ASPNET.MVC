@@ -1,3 +1,154 @@
-﻿showcase {
+﻿.showcase {
+    display: block;
+    position: relative;
 
+    @include lg {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .background-image {
+        display: none;
+
+
+        @include md {
+            display: initial;
+            z-index: -5;
+            width: 100%;
+            padding-bottom: 5rem;
+        }
+
+        @include lg {
+            grid-column-start: 2;
+            grid-row-start: 1;
+        }
+    }
+
+    .container {
+        display: block;
+        background-image: $theme-gradient;
+        border-radius: 25px;
+        padding: 10px;
+        transition: ease-in 1s;
+
+
+        @include md {
+            position: absolute;
+            top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            height: fit-content;
+            padding-bottom: 1rem;
+            transition: ease-in 1s;
+            background-image: none;
+        }
+
+        @include lg {
+            display: flex;
+            position: relative;
+            justify-content: flex-end;
+            align-content: center;
+            height: fit-content;
+            transition: ease-in 1s;
+        }
+        /*@include lg {
+            display: flex;
+            justify-content: flex-end;
+            align-content: center;
+            height: fit-content;
+        }*/
+        .content {
+            display: block;
+            flex-direction: column;
+            justify-items: flex-end;
+            width: auto;
+            gap: 15px;
+            background-color: $white;
+            opacity: 0.95;
+            border: 1px solid grey;
+            border-radius: 25px;
+            padding: 1rem;
+
+
+            @include lg {
+                display: flex;
+                flex-direction: column;
+                justify-items: flex-end;
+                width: 75%;
+                height: 50%;
+                gap: 15px;
+                background-color: transparent;
+                opacity: 1;
+                border: 0;
+                border-radius: 0;
+                padding: 0;
+            }
+
+
+
+            h1 {
+                padding-top: 0;
+                text-shadow: 1px 1px 2px grey;
+
+                @include md {
+                    padding-top: 5rem;
+                }
+            }
+
+            p {
+            }
+
+            a {
+                display: block;
+                width: 40%;
+                margin-bottom: 3rem;
+            }
+
+            h6 {
+            }
+        }
+
+        div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1rem;
+            width: fit-content;
+
+            @include md {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+                gap: 0.1rem;
+            }
+
+            @include lg {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 0.1rem;
+            }
+
+            @include xxl {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                padding: 0rem;
+                padding-right: 1rem;
+                gap: 0px;
+            }
+
+            .brands {
+                display: flex;
+                padding-right: 0rem;
+                padding: 0.0rem;
+
+
+                @include md {
+                    padding: 0rem;
+                    padding-right: 1rem;
+                }
+            }
+        }
+    }
 }

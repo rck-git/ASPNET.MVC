@@ -1,7 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container / register services with Builder.Services.AddDbContext<Datacontext>();
 //
+builder.Services.AddRouting(x => x.LowercaseUrls = true);
 builder.Services.AddControllersWithViews(); //tell service to use mvc
+
 
 //builder.Services.AddDbContext<Datacontext>(x => x.UseSqlServer(filepath));
 //builder.Services.AddScoped<ProductService>();
