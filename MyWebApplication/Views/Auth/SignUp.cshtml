@@ -9,7 +9,7 @@
 
 		<form method="post" novalidate>
 			<h1>Create Account</h1>
-			<p>Already have an account?<a asp-controller="Account" asp-action="SignIn">Sign in here</a></p>
+			<p>Already have an account?<a asp-controller="Auth" asp-action="SignIn">Sign in here</a></p>
 			<div class="content">
 				<div id="form-firstname" class="input-group">
 					<label asp-for="@Model.FirstName"></label>
@@ -39,7 +39,7 @@
 				<div id="form-terms" class="checkbox-group"> 
 					<input asp-for="@Model.Terms" />
 					<span asp-validation-for="@Model.Terms"></span>
-					<label asp-for="@Model.Terms">I agree to the <a asp-controller="account" asp-action="Terms">Terms</a> & <a asp-controller="account" asp-action="conditions">Conditions</a>.</label>
+					<label asp-for="@Model.Terms">I agree to the <a asp-controller="Auth" asp-action="Terms">Terms</a> & <a asp-controller="account" asp-action="conditions">Conditions</a>.</label>
 				</div>
 				@* asp-action="OnPost" ???? *@
 				<button  id="form-button" class="btn-theme-s" type="submit">Sign Up</button>
@@ -50,3 +50,4 @@
 
 	</div>
 </section>
+

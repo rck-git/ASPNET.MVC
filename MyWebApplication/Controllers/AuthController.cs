@@ -3,13 +3,9 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace MyWebApplication.Controllers;
 
-public class AccountController : Controller
+public class AuthController : Controller
 {
-    public IActionResult Index()
-    {
-        ViewData["Title"] = "Account Overview";
-        return View();
-    }
+
     public IActionResult SignIn()
     {
         ViewData["Title"] = "Sign In";
