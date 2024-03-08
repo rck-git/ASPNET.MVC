@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyWebApplication.Models.Forms;
+using MyWebApplication.Models.Views;
 using System.Security.Cryptography.X509Certificates;
 
 namespace MyWebApplication.Controllers;
@@ -6,27 +8,53 @@ namespace MyWebApplication.Controllers;
 public class AuthController : Controller
 {
 
-    public IActionResult SignIn()
+	[Route("/signin")]
+	public IActionResult SignIn()
     {
-        ViewData["Title"] = "Sign In";
-        return View();
+		SignUpViewModel viewModel = new SignUpViewModel();
+		ViewData["Title"] = "Sign In";
+        return View(viewModel);
     }
-    public IActionResult SignUp()
+
+
+
+    [Route("/signup")]
+	[HttpGet]
+	public IActionResult SignUp()
     {
         ViewData["Title"] = "Sign Up";
 
-        return View();
-    }
-    public IActionResult OnPost()
+		SignUpViewModel viewModel = new SignUpViewModel();
+		
+        return View(viewModel);
+	}
+
+
+	[Route("/signup")]
+	[HttpPost]
+	public IActionResult SignUp(SignUpViewModel model)
 	{
+		ViewData["Title"] = "Sign Up";
+
 		if (!ModelState.IsValid)
 		{
-			return View();
+			return View(model);
 		}
-		return RedirectToAction(nameof(Index));
+		//return View(model);
+		return RedirectToAction("SignIn", "Auth");
 	}
-    //send the form "model"/"object" via a userservice
-    //userService.CreateUser(Form)
+
+
+	//public IActionResult OnPost()
+	//{
+	//	if (!ModelState.IsValid)
+	//	{
+	//		return View();
+	//	}
+	//	return RedirectToAction(nameof(Index));
+	//}
+	//send the form "model"/"object" via a userservice
+	//userService.CreateUser(Form)
 	public new IActionResult SignOut()
     {
         return RedirectToAction("Index","Home");
