@@ -39,7 +39,7 @@
 				<div id="form-terms" class="checkbox-group"> 
 					<input asp-for="@Model.Terms" />
 					<span asp-validation-for="@Model.Terms"></span>
-					<label asp-for="@Model.Terms">I agree to the <a asp-controller="Auth" asp-action="Terms">Terms</a> & <a asp-controller="account" asp-action="conditions">Conditions</a>.</label>
+					<label asp-for="@Model.Terms">I agree to the <a asp-controller="Auth" asp-action="Terms">Terms</a> & <a asp-controller="Auth" asp-action="conditions">Conditions</a>.</label>
 				</div>
 				@* asp-action="OnPost" ???? *@
 				<button  id="form-button" class="btn-theme-s" type="submit">Sign Up</button>
