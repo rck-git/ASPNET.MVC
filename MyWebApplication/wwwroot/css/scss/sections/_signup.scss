@@ -2,8 +2,8 @@
     height: 100%;
 
     .container {
-        display: grid;
-        /*   flex-direction:column;*/
+        display: flex;
+      
         justify-content: center;
         align-items: center;
         height: 100%;
@@ -17,30 +17,19 @@
         }
 
         form {
-            padding:1rem;
+            padding: 1rem;
 
             .content {
                 display: grid;
                 gap: 1rem 2rem;
                 grid-template-columns: 1fr;
                 grid-template-areas:
-                    "firstname"
-                    "lastname"
-                    "email" 
-                    "password" 
-                    "confirm" 
-                    "terms" 
-                    "button";
-                    
-                    @include md {
+                    "firstname" "lastname" "email" "password" "confirm" "terms" "button";
+
+                @include md {
                     grid-template-columns: 1fr 1fr;
                     grid-template-areas:
-                        "firstname lastname" 
-                        "email email" 
-                        "password password" 
-                        "confirm confirm" 
-                        "terms terms" 
-                        "button button";
+                        "firstname lastname" "email email" "password password" "confirm confirm" "terms terms" "button button";
                 }
 
                 #form-firstname {
@@ -65,12 +54,13 @@
 
                 #form-terms {
                     grid-area: terms;
-                    padding:1rem 0;
+                    padding: 1rem 0;
                 }
 
                 #form-button {
                     grid-area: button;
                 }
+
             }
         }
     }

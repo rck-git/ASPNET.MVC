@@ -1,10 +1,26 @@
 ﻿form {
     width: 100%;
     display: grid;
-    gap: 1rem;
+
 
     .input-group {
         display: grid;
+    }
+
+    .checkbox {
+
+        span {
+            display: block;
+
+            &.field-validation-error {
+                position: static;
+                top: 0;
+                right: 0;
+                @include text-s;
+                color: $danger;
+            }
+
+        }
     }
 
     .checkbox-group {
@@ -16,10 +32,11 @@
         input[type="checkbox"] {
             height: 1.2rem;
             width: 1.2rem;
+            
         }
 
         label {
-            margin-bottom: 0;
+            margin: 0;
             font-weight: 400;
         }
     }
@@ -35,7 +52,6 @@
         border: 1px solid $gray-400;
 
         &::placeholder {
-           
             opacity: 0.5;
         }
 
@@ -45,17 +61,16 @@
 
             &::placeholder {
                 color: $danger;
-                opacity:0.5;
-                
+                opacity: 0.5;
             }
         }
     }
 
     span {
-        &.field-validation-error{
-            position:absolute;
-            top:0;
-            right:0;
+        &.field-validation-error {
+            position: absolute;
+            top: 0;
+            right: 0;
             @include text-s;
             color: $danger;
         }
