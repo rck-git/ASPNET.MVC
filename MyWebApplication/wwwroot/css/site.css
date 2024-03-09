@@ -357,10 +357,23 @@ a:hover {
 form {
   width: 100%;
   display: grid;
-  gap: 1rem;
 }
 form .input-group {
   display: grid;
+}
+form .checkbox span {
+  display: block;
+}
+form .checkbox span.field-validation-error {
+  position: static;
+  top: 0;
+  right: 0;
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px !important;
+  color: #EF4444;
 }
 form .checkbox-group {
   display: flex;
@@ -373,7 +386,7 @@ form .checkbox-group input[type=checkbox] {
   width: 1.2rem;
 }
 form .checkbox-group label {
-  margin-bottom: 0;
+  margin: 0;
   font-weight: 400;
 }
 form label {
@@ -682,12 +695,63 @@ footer .container .social-media {
   text-align: center;
 }
 
+#signin {
+  height: 100%;
+}
+#signin .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#signin .container p a {
+  padding-left: 0.5rem;
+}
+@media (min-width: 992px) {
+  #signin .container {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  #signin .container {
+    width: 40%;
+  }
+}
+#signin .container form {
+  padding: 1rem;
+}
+#signin .container form .content {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: 1fr;
+  grid-template-areas: "email" "password" "confirm" "terms" "button";
+}
+#signin .container form .content #form-email {
+  grid-area: email;
+}
+#signin .container form .content #form-password {
+  grid-area: password;
+}
+#signin .container form .content #form-terms {
+  grid-area: terms;
+  padding: 1rem 0;
+}
+#signin .container form .content #form-button {
+  grid-area: button;
+}
+#signin .container form #form-forgot-password {
+  padding-top: 1rem;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  align-self: center;
+}
+
 #signup {
   height: 100%;
 }
 #signup .container {
-  display: grid;
-  /*   flex-direction:column;*/
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;

@@ -1,12 +1,18 @@
-﻿#signup {
+﻿#signin {
     height: 100%;
-
+ 
     .container {
-        display: flex;
       
+        display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
+
+        p {
+            a {
+                padding-left: 0.5rem;
+            }
+        }
 
         @include lg {
             width: 60%;
@@ -17,28 +23,15 @@
         }
 
         form {
+         
             padding: 1rem;
-
             .content {
                 display: grid;
                 gap: 1rem 2rem;
                 grid-template-columns: 1fr;
                 grid-template-areas:
-                    "firstname" "lastname" "email" "password" "confirm" "terms" "button";
+                    "email" "password" "confirm" "terms" "button";
 
-                @include md {
-                    grid-template-columns: 1fr 1fr;
-                    grid-template-areas:
-                        "firstname lastname" "email email" "password password" "confirm confirm" "terms terms" "button button";
-                }
-
-                #form-firstname {
-                    grid-area: firstname;
-                }
-
-                #form-lastname {
-                    grid-area: lastname;
-                }
 
                 #form-email {
                     grid-area: email;
@@ -46,10 +39,6 @@
 
                 #form-password {
                     grid-area: password;
-                }
-
-                #form-confirm {
-                    grid-area: confirm;
                 }
 
                 #form-terms {
@@ -60,7 +49,15 @@
                 #form-button {
                     grid-area: button;
                 }
+            }
 
+            #form-forgot-password {
+                padding-top:1rem;
+                font-size: 16px;
+                font-weight: 600;
+                text-align: center;
+                align-self: center;
+                
             }
         }
     }

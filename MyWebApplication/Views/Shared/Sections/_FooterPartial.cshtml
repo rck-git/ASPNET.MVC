@@ -1,5 +1,6 @@
 ﻿<footer>
-    <div class="container" @((ViewContext.RouteData.Values["Controller"]!.ToString() == "Auth") ? " d-none" : "social-media")>
+    @* @((ViewContext.RouteData.Values["Controller"]!.ToString() == "Auth") ? " d-none" : "social-media")*@
+    <div class="container">
         <div class="social-media">
             <a class="btn-social" href="#"><i class="fa-brands fa-facebook"></i></a>
             <a class="btn-social" href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
