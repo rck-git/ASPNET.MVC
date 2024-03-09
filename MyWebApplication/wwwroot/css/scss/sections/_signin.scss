@@ -1,0 +1,64 @@
+﻿#signin {
+    height: 100%;
+ 
+    .container {
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        p {
+            a {
+                padding-left: 0.5rem;
+            }
+        }
+
+        @include lg {
+            width: 60%;
+        }
+
+        @include xl {
+            width: 40%;
+        }
+
+        form {
+         
+            padding: 1rem;
+            .content {
+                display: grid;
+                gap: 1rem 2rem;
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "email" "password" "confirm" "terms" "button";
+
+
+                #form-email {
+                    grid-area: email;
+                }
+
+                #form-password {
+                    grid-area: password;
+                }
+
+                #form-terms {
+                    grid-area: terms;
+                    padding: 1rem 0;
+                }
+
+                #form-button {
+                    grid-area: button;
+                }
+            }
+
+            #form-forgot-password {
+                padding-top:1rem;
+                font-size: 16px;
+                font-weight: 600;
+                text-align: center;
+                align-self: center;
+                
+            }
+        }
+    }
+}

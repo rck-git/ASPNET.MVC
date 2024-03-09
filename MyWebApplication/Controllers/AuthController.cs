@@ -9,16 +9,41 @@ public class AuthController : Controller
 {
 
 	[Route("/signin")]
+	[HttpGet]
 	public IActionResult SignIn()
     {
-		SignUpViewModel viewModel = new SignUpViewModel();
 		ViewData["Title"] = "Sign In";
+
+		SignInViewModel viewModel = new SignInViewModel();
         return View(viewModel);
     }
 
+	[Route("/signin")]
+	[HttpPost]
+	public IActionResult SignIn(SignInViewModel model)
+	{
+		if (!ModelState.IsValid)
+		{
+			return View(model);
+		}
+
+		//	var result = _authService.SignIn(model.Form);
+		//	if (result)
+		//	{
+		//		return RedirectToAction("Account", "Index");
+		//	}
+
+		//	model.ErrorMessage = "Incorrect email or password";
+		//	return View(model);
+		//}
+		
+		model.ErrorMessage = "Incorrect email or password";
+		return View(model);
+
+	}
 
 
-    [Route("/signup")]
+	[Route("/signup")]
 	[HttpGet]
 	public IActionResult SignUp()
     {
@@ -45,16 +70,6 @@ public class AuthController : Controller
 	}
 
 
-	//public IActionResult OnPost()
-	//{
-	//	if (!ModelState.IsValid)
-	//	{
-	//		return View();
-	//	}
-	//	return RedirectToAction(nameof(Index));
-	//}
-	//send the form "model"/"object" via a userservice
-	//userService.CreateUser(Form)
 	public new IActionResult SignOut()
     {
         return RedirectToAction("Index","Home");
