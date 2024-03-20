@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using MyWebApplication.Helpers;
-using System.ComponentModel;
+﻿
+using Infrastructure.Helpers;
 using System.ComponentModel.DataAnnotations;
 
-namespace MyWebApplication.Models.Forms;
+namespace Infrastructure.Models;
 
 public class SignUpFormModel
 {
@@ -39,5 +38,3 @@ public class SignUpFormModel
 	public bool Terms { get; set; }
 
 }
-
-

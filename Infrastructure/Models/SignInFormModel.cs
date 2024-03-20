@@ -1,10 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MyWebApplication.Models.Forms;
+namespace Infrastructure.Models;
 
 public class SignInFormModel
 {
-
 	[DataType(DataType.EmailAddress)]
 	[Display(Name = "Email address", Prompt = "Enter your email address", Order = 0)]
 	[Required(ErrorMessage = "Invalid email adress")]
