@@ -1,0 +1,138 @@
+﻿#details {
+    width: 100%;
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    padding-bottom:15rem;
+
+    aside {
+        text-align:center;
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        justify-content: start;
+        justify-items: center;
+        align-content: center;
+        justify-self: end;
+
+        img {
+            justify-self: center;
+            justify-content: center;
+            align-self:center;
+        }
+
+        nav {
+
+            a {
+                display: block;
+                width: 100%;
+                text-align:start;
+                padding-left:2rem;
+            }
+        }
+    }
+
+    .container {
+
+
+
+
+        p {
+            a {
+                padding-left: 0.5rem;
+            }
+        }
+
+        @include lg {
+            width: 60%;
+        }
+
+        @include xl {
+            width: 80%;
+        }
+
+
+        #forms {
+
+            form {
+                padding: 1rem;
+
+                .content {
+                    display: grid;
+                    gap: 1rem;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas:
+                        "firstname lastname" "email phone" "bio bio" "confirm confirm";
+
+
+                    #form-firstname {
+                        grid-area: firstname;
+                    }
+
+                    #form-lastname {
+                        grid-area: lastname;
+                    }
+
+                    #form-email {
+                        grid-area: email;
+                    }
+
+                    #form-phone {
+                        grid-area: phone;
+                    }
+
+                    #form-bio {
+                        grid-area: bio;
+                    }
+
+                    #form-confirm {
+                        display: flex;
+                        gap: 20px;
+                        width: 40%;
+                        height: 80%;
+                        flex-direction: row;
+                        grid-area: confirm;
+                    }
+                }
+
+                #content-address {
+                    display: grid;
+                    gap: 1rem 2rem;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas:
+                        "Adressline-1 Adressline-1" 
+                        "Adressline-2 Adressline-2"
+                        "postalcode city" 
+                        "confirm confirm";
+
+
+                    #form-Adressline-1 {
+                        grid-area: Adressline-1;
+                    }
+
+                    #form-Adressline-2 {
+                        grid-area: Adressline-2;
+                    }
+
+                    #form-postalcode {
+                        grid-area: postalcode;
+                    }
+
+                    #form-city {
+                        grid-area: city;
+                    }
+
+                    #form-address-confirm {
+                        display: flex;
+                        gap: 20px;
+                        width: 40%;
+                        height: 80%;
+                        flex-direction: row;
+                        grid-area: confirm;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -5,7 +5,7 @@
 <section id="signin">
 	<div class="container">
 
-		<form method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
+		<form method="post" asp-controller="Auth" asp-action="SignIn" asp-route-ReturnUrL="@ViewData["ReturnUrl"]" novalidate>
 		
 			<h1>Welcome Back</h1>
 			<p>Dont have an account yet?<a asp-controller="Auth" asp-action="SignUp">Sign Up here</a></p>

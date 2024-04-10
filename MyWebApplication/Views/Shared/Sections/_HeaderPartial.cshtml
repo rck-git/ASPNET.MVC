@@ -1,12 +1,26 @@
-﻿<header>
+﻿
+@inject SignInManager<UserEntity> _signInManager
+
+<header>
     <div class="container">
         <a asp-controller="Home" asp-action="Index"><img id="logo" src="~/images/home/solid-logo-header.svg" alt="company logo" /></a>
 
         <div id="menu">
             <nav>
-                <a class="nav-link" asp-controller="Home" asp-action="Index" asp-fragment="overview">Overview</a>
-                <a class="nav-link" asp-controller="Home" asp-action="Index" asp-fragment="features">Features</a>
-                <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a>
+                @if (_signInManager.IsSignedIn(User))
+                {
+                    <a class="nav-link" asp-controller="Home" asp-action="Index" asp-fragment="overview">Overview</a>
+                    <a class="nav-link" asp-controller="Courses" asp-action="Index">Courses</a>
+                    <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a>
+                }
+                else
+                {
+                    <a class="nav-link" asp-controller="Home" asp-action="Index" asp-fragment="overview">Overview</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="Index" asp-fragment="features">Features</a>
+                    <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a>
+                
+                }
+                
             </nav>
         </div>
         <div class="btn-switch">
@@ -18,8 +32,17 @@
             <label>Dark</label>
         </div>
         <div class="account-buttons">
-            <a class="btn-gray" asp-controller="Auth" asp-action="SignIn"><i class="fa-regular fa-right-to-bracket"></i>Sign in</a>
-            <a class="btn-theme" asp-controller="Auth" asp-action="SignUp"><i class="fa-regular fa-user"></i>Sign up</a>
+            @if(_signInManager.IsSignedIn(User))
+            {
+                @* <img src="@Model.BasicInfo.ProfileImage" alt=@($"{Model.BasicInfo.FirstName}") /> *@
+                <a class="btn-theme" asp-controller="Account" asp-action="Details">My account</a>
+            }
+            else
+            {
+                <a class="btn-gray" asp-controller="Auth" asp-action="SignIn"><i class="fa-regular fa-right-to-bracket"></i>Sign in</a>
+                <a class="btn-theme" asp-controller="Auth" asp-action="SignUp"><i class="fa-regular fa-user"></i>Sign up</a>
+            }
+          
         </div>
     </div>
 </header>
