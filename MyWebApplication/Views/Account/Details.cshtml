@@ -1,84 +1,93 @@
 ﻿@model AccountDetailsViewModel
 
-<section id="details">
-	<div class="container" id="account-details">
-		<aside>
-			<div class="profile-info">
-				<img src="@Model.BasicInfo.ProfileImage" alt=@($"{Model.BasicInfo.FirstName} {Model.BasicInfo.LastName}")/>
-				<h5>@($"{Model.BasicInfo.FirstName} {Model.BasicInfo.LastName}")</h5>
-				<p>@Model.BasicInfo.Email</p>
-			</div>
-			<nav>
-				<a class="btn-theme-s" asp-controller="Account" asp-action="Details">Account Details</a>
-				<a class="btn-gray
-" asp-controller="Account" asp-action="SignOut">Sign Out</a>
-			</nav>
-		</aside>
+<div id="header">
+	@await Html.PartialAsync("~/Views/Shared/Sections/_HeaderPartial.cshtml")
+</div>
 
-		<form method="post" asp-controller="Account" asp-action="BasicInfo" novalidate>
-			<h1>Account Details</h1>
-			<h5> Basic Info</h5>
-			<div class="content">
-				<div id="form-firstname" class="input-group">
-					<label asp-for="BasicInfo.FirstName"></label>
-					<span asp-validation-for="BasicInfo.FirstName"></span>
-					<input asp-for="BasicInfo.FirstName" />
+<section id="details">
+	<aside>
+		<div class="profile-info">
+			<img src="~/images/account/@Model.profileInfo.ProfileImageUrl" alt=@($"{Model.profileInfo.FirstName} {Model.profileInfo.LastName}") />
+			<h5>@($"{Model.profileInfo.FirstName} {Model.profileInfo.LastName}")</h5>
+			<p>@Model.profileInfo.Email</p>
+		</div>
+		<nav>
+			<a class="btn-theme-s" asp-controller="Account" asp-action="Details">Account Details</a>
+			<a class="btn-gray" asp-controller="Auth" asp-action="SignOut">Sign Out</a>
+		</nav>
+	</aside>
+	
+	<div class="container" id="account-details">
+		<div id="forms">
+			<form method="post" asp-controller="Account" asp-action="Details" novalidate>
+				<h1>Account Details</h1>
+				<h5> Basic Info</h5>
+				<div class="content">
+					<div id="form-firstname" class="input-group">
+						<label asp-for="User.FirstName"></label>
+						<span asp-validation-for="User.FirstName"></span>
+						<input asp-for="User.FirstName" />
+					</div>
+					<div id="form-lastname" class="input-group">
+						<label asp-for="User.LastName"></label>
+						<span asp-validation-for="User.LastName"></span>
+						<input asp-for="User.LastName" />
+					</div>
+					<div id="form-email" class="input-group">
+						<label asp-for="User.Email"></label>
+						<span asp-validation-for="User.Email"></span>
+						<input asp-for="User.Email" />
+					</div>
+					<div id="form-phone" class="input-group">
+						<label asp-for="User.Phone"></label>
+						<span asp-validation-for="User.Phone"></span>
+						<input asp-for="User.Phone" />
+					</div>
+					<div id="form-bio" class="input-group">
+						<label asp-for="User.Bio"></label>
+						<textarea asp-for="User.Bio" placeholder="Add a short bio..."></textarea>
+					</div>
+					<div id="form-confirm">
+						<button type="reset" class="btn-gray">Cancel</button>
+						<button type="submit" class="btn-theme-s">Save Changes</button>
+					</div>
 				</div>
-				<div id="form-lastname" class="input-group">
-					<label asp-for="BasicInfo.LastName"></label>
-					<span asp-validation-for="BasicInfo.LastName"></span>
-					<input asp-for="BasicInfo.LastName" />
+			</form>
+
+
+			<form method="post" asp-controller="Account" asp-action="Details" novalidate>
+				<h1>Address</h1>
+				<div id="content-address">
+					<div id="form-Adressline-1" class="input-group">
+						<label asp-for="AddressInfo.Addressline_1"></label>
+						<span asp-validation-for="AddressInfo.Addressline_1"></span>
+						<input asp-for="AddressInfo.Addressline_1" />
+					</div>
+					<div id="form-Adressline-2" class="input-group">
+						<label asp-for="AddressInfo.Addressline_2"></label>
+						<span asp-validation-for="AddressInfo.Addressline_2"></span>
+						<input asp-for="AddressInfo.Addressline_2" />
+					</div>
+					<div id="form-postalcode" class="input-group">
+						<label asp-for="AddressInfo.PostalCode"></label>
+						<span asp-validation-for="AddressInfo.PostalCode"></span>
+						<input asp-for="AddressInfo.PostalCode" />
+					</div>
+					<div id="form-city" class="input-group">
+						<label asp-for="AddressInfo.City"></label>
+						<span asp-validation-for="AddressInfo.City"></span>
+						<input asp-for="AddressInfo.City" />
+					</div>
+					<div id="form-address-confirm">
+						<button type="reset" class="btn-gray">Cancel</button>
+						<button type="submit" class="btn-theme-s">Save Changes</button>
+					</div>
 				</div>
-				<div id="form-email" class="input-group">
-					<label asp-for="BasicInfo.Email"></label>
-					<span asp-validation-for="BasicInfo.Email"></span>
-					<input asp-for="BasicInfo.Email" />
-				</div>
-				<div id="form-phone" class="input-group">
-					<label asp-for="BasicInfo.Phone"></label>
-					<span asp-validation-for="BasicInfo.Phone"></span>
-					<input asp-for="BasicInfo.Phone" />
-				</div>
-				<div id="form-confirm" class="input-group">
-					<label asp-for="BasicInfo.Bio"></label>
-					<textarea asp-for="BasicInfo.Bio" placeholder="Add a short bio..."></textarea>
-				</div>
-				<div>
-					<button type="reset" class="btn-gray">Cancel</button>
-					<button type="submit" class="btn-theme-s">Save Changes</button>
-				</div>
-			</div>
-		</form>
-		<hr />
-		<form method="post" asp-controller="Account" asp-action="AdressInfo" novalidate>
-			<h1>Account Details</h1>
-			<h5> Basic Info</h5>
-			<div class="content">
-				<div id="form-Adressline-1" class="input-group">
-					<label asp-for="AdressInfo.Addressline_1"></label>
-					<span asp-validation-for="AdressInfo.Addressline_1"></span>
-					<input asp-for="AdressInfo.Addressline_1" />
-				</div>
-				<div id="form-Adressline-2" class="input-group">
-					<label asp-for="AdressInfo.Addressline_2"></label>
-					<span asp-validation-for="AdressInfo.Addressline_2"></span>
-					<input asp-for="AdressInfo.Addressline_2" />
-				</div>
-				<div id="form-postalcode" class="input-group">
-					<label asp-for="AdressInfo.PostalCode"></label>
-					<span asp-validation-for="AdressInfo.PostalCode"></span>
-					<input asp-for="AdressInfo.PostalCode" />
-				</div>
-				<div id="form-city" class="input-group">
-					<label asp-for="AdressInfo.City"></label>
-					<span asp-validation-for="AdressInfo.City"></span>
-					<input asp-for="AdressInfo.City" />
-				</div>
-				<div>
-					<button type="reset" class="btn-gray">Cancel</button>
-					<button type="submit" class="btn-theme-s">Save Changes</button>
-				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
 </section>
+
+<div id="footer">
+	@await Html.PartialAsync("~/Views/Shared/Sections/_FooterPartial.cshtml")
+</div>

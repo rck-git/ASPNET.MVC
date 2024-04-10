@@ -1,8 +1,7 @@
 ﻿#signin {
     height: 100%;
- 
+
     .container {
-      
         display: flex;
         justify-content: center;
         align-items: center;
@@ -23,8 +22,9 @@
         }
 
         form {
-         
+
             padding: 1rem;
+
             .content {
                 display: grid;
                 gap: 1rem 2rem;
@@ -52,12 +52,11 @@
             }
 
             #form-forgot-password {
-                padding-top:1rem;
+                padding-top: 1rem;
                 font-size: 16px;
                 font-weight: 600;
                 text-align: center;
                 align-self: center;
-                
             }
         }
     }

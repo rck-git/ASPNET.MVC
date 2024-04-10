@@ -1,18 +1,11 @@
-﻿using MyWebApplication.Models.Forms;
+﻿using Infrastructure.Entities;
+using MyWebApplication.Models.Forms;
 
 namespace MyWebApplication.Models.Views;
 
 public class AccountDetailsViewModel
 {
-	public AccountDetailsBasicInfoModel BasicInfo { get; set; } = new AccountDetailsBasicInfoModel()
-	{
-		ProfileImage = "/images/account/profile-image.svg",
-		FirstName = "Rickard",
-		LastName = "last",
-		Email = "Email@domain.com",
-		Phone = "123",
-		//Bio = "Demo Bio",
-	};
-
-	public AccountDetailsAddressInfoModel AdressInfo { get; set; } = new AccountDetailsAddressInfoModel();
+	public ProfileInfoViewModel profileInfo { get; set; } = null!;
+	public AccountDetailsBasicInfoModel User { get; set; } = null!;
+	public AccountDetailsAddressInfoModel AddressInfo { get; set; } = null!;
 }

@@ -4,6 +4,8 @@ namespace MyWebApplication.Models.Forms;
 
 public class AccountDetailsBasicInfoModel
 {
+	public int AddressId { get; set; }
+
 	[DataType(DataType.ImageUrl)]
 	public string? ProfileImage { get; set; }
 
