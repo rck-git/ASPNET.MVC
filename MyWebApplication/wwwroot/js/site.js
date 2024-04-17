@@ -1,4 +1,23 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿document.addEventListener('DOMContentLoaded', function () {
 
-// Write your JavaScript code.
+    handleProfileImageUpload()
+})
+
+function handleProfileImageUpload() {
+    try {
+        let fileUploader = document.querySelector('#fileUploader')
+        if (fileUploader != undefined) {
+            console.log('inne')
+            fileUploader.addEventListener('change', function () {
+                if (this.files.length > 0) {
+                    this.form.submit()
+                }
+            })
+        }
+
+    }
+    catch (e) {
+
+    }
+
+}

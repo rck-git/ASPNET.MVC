@@ -4,10 +4,10 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
-    padding-bottom:15rem;
+    padding-bottom: 15rem;
 
     aside {
-        text-align:center;
+        text-align: center;
         display: flex;
         width: 60%;
         flex-direction: column;
@@ -16,10 +16,24 @@
         align-content: center;
         justify-self: end;
 
-        img {
-            justify-self: center;
-            justify-content: center;
-            align-self:center;
+        profile-info {
+            
+                img {
+                    position: relative;
+                    justify-self: center;
+                    justify-content: center;
+                    align-self: center;
+                }
+
+                form {
+                    background-color: white;
+                    border: 0.5px solid black;
+                    width: fit-content;
+                    border-radius: 25px;
+                    position: relative;
+                    bottom: 54px;
+                    left: 140px;
+                }
         }
 
         nav {
@@ -27,8 +41,8 @@
             a {
                 display: block;
                 width: 100%;
-                text-align:start;
-                padding-left:2rem;
+                text-align: start;
+                padding-left: 2rem;
             }
         }
     }
@@ -101,10 +115,7 @@
                     gap: 1rem 2rem;
                     grid-template-columns: 1fr 1fr;
                     grid-template-areas:
-                        "Adressline-1 Adressline-1" 
-                        "Adressline-2 Adressline-2"
-                        "postalcode city" 
-                        "confirm confirm";
+                        "Adressline-1 Adressline-1" "Adressline-2 Adressline-2" "postalcode city" "confirm confirm";
 
 
                     #form-Adressline-1 {
