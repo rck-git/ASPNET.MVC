@@ -6,7 +6,7 @@ public class AccountDetailsAddressInfoModel
 {
 
 	[Display(Name = "Address line 1", Prompt = "Enter your address line ", Order = 0)]
-	[Required(ErrorMessage = "Invalid first name")]
+	[Required(ErrorMessage = "Address is required")]
 	public string Addressline_1 { get; set; } = null!;
 
 	[Display(Name = "Address line 2", Prompt = "Enter your second address line", Order = 1)]
