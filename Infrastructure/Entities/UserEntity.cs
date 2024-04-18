@@ -12,7 +12,7 @@ public class UserEntity : IdentityUser
 	public string Firstname { get; set; } = null!;
 	[ProtectedPersonalData]
 	public string Lastname { get; set; } = null!;
-
+	public string? ProfileImage { get; set; } = "profile-image.svg";
 	public string? Bio { get; set; } = null!;
 	public DateTime? Created { get; set; }
 	public DateTime? Modified { get; set; }
