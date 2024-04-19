@@ -5,6 +5,7 @@ using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using MyWebApplication.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container / register services with Builder.Services.AddDbContext<Datacontext>();
@@ -12,6 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRouting(x => x.LowercaseUrls = true);
 builder.Services.AddControllersWithViews(); //tell service to use mvc
 builder.Services.AddDbContext<DataContexts>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+builder.Services.AddHttpClient<CoursesController>();
+
 
 builder.Services.AddDefaultIdentity<UserEntity>(x =>
 {
@@ -37,6 +40,10 @@ builder.Services.AddScoped<AddressRepository>();
 builder.Services.AddScoped<AddressService>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<UserService>();
+
+//builder.Services.AddSingleton<HttpClient>();
+
+
 
 
 
