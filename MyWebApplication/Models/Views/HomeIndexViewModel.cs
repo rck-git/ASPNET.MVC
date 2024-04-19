@@ -70,6 +70,9 @@ public class HomeIndexViewModel
             ImageText="Aliquam malesuada neque eget elit nulla vestibulum nunc cras."},
 		},
     };
+    public SubscribeViewModel Subscribe { get; set; } = new SubscribeViewModel
+    {
 
+    };
 }
 

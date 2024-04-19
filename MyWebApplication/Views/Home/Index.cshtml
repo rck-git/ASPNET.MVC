@@ -1,6 +1,6 @@
 ﻿
 @model HomeIndexViewModel
-@*This is the Index of the view Home. with two partial views*@
+@*This is the Index of the view Home. with partial views*@
 
 <div id="header">
     @await Html.PartialAsync("~/Views/Shared/Sections/_HeaderPartial.cshtml")
@@ -10,7 +10,9 @@
     
 @await Html.PartialAsync("~/Views/Shared/Sections/_Showcase.cshtml", Model.Showcase)
 @await Html.PartialAsync("~/Views/Shared/Sections/_Features.cshtml", Model.Features)
+@await Html.PartialAsync("~/Views/Shared/Sections/_SubscribeToNewsletter.cshtml", Model.Subscribe)
 
+@* <partial name="~/Views/Shared/Sections/_SubscribeToNewsletter.cshtml" /> *@
     
 <div id="footer">
     @await Html.PartialAsync("~/Views/Shared/Sections/_FooterPartial.cshtml")
