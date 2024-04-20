@@ -803,3 +803,127 @@ footer .container .social-media {
 #signup .container form .content #form-button {
   grid-area: button;
 }
+
+#details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 3rem;
+}
+#details aside {
+  text-align: center;
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  justify-content: start;
+  justify-items: center;
+  align-content: center;
+  justify-self: end;
+}
+#details aside form {
+  background-color: white;
+  position: relative;
+  left: 140px;
+  top: -55px;
+  border-radius: 25px;
+  width: fit-content;
+}
+#details aside div profile-info img {
+  position: relative;
+  justify-self: center;
+  justify-content: center;
+  align-self: center;
+}
+#details aside nav a {
+  display: block;
+  width: 100%;
+  text-align: start;
+  padding-left: 15px;
+}
+#details aside nav i {
+  padding-right: 5px;
+}
+#details .container {
+  padding-left: 150px;
+  padding-top: 5rem;
+  margin-left: 10px;
+  padding-bottom: 5rem;
+  border-left: 1px solid #d4d7e5;
+}
+#details .container p a {
+  padding-left: 0.5rem;
+}
+@media (min-width: 992px) {
+  #details .container {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  #details .container {
+    width: 80%;
+  }
+}
+#details .container #forms form {
+  padding: 1rem;
+}
+#details .container #forms form .content {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #d4d7e5;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "firstname lastname" "email phone" "bio bio" "confirm confirm";
+}
+#details .container #forms form .content #form-firstname {
+  grid-area: firstname;
+}
+#details .container #forms form .content #form-lastname {
+  grid-area: lastname;
+}
+#details .container #forms form .content #form-email {
+  grid-area: email;
+}
+#details .container #forms form .content #form-phone {
+  grid-area: phone;
+}
+#details .container #forms form .content #form-bio {
+  grid-area: bio;
+}
+#details .container #forms form .content #form-confirm {
+  display: flex;
+  gap: 20px;
+  width: 40%;
+  height: 80%;
+  flex-direction: row;
+  grid-area: confirm;
+}
+#details .container #forms form #content-address {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "Adressline-1 Adressline-1" "Adressline-2 Adressline-2" "postalcode city" "confirm confirm";
+}
+#details .container #forms form #content-address #form-Adressline-1 {
+  grid-area: Adressline-1;
+}
+#details .container #forms form #content-address #form-Adressline-2 {
+  grid-area: Adressline-2;
+}
+#details .container #forms form #content-address #form-postalcode {
+  grid-area: postalcode;
+}
+#details .container #forms form #content-address #form-postalcode span.field-validation-error {
+  right: -20px;
+}
+#details .container #forms form #content-address #form-city {
+  grid-area: city;
+}
+#details .container #forms form #content-address #form-address-confirm {
+  display: flex;
+  gap: 20px;
+  width: 40%;
+  height: 80%;
+  flex-direction: row;
+  grid-area: confirm;
+}

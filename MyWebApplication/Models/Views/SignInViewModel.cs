@@ -1,4 +1,5 @@
-﻿using MyWebApplication.Models.Forms;
+﻿using Infrastructure.Models;
+
 
 namespace MyWebApplication.Models.Views;
 

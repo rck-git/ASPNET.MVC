@@ -5,10 +5,11 @@
 
 <section id="signup">
 	<div class="container">
-
 		<form method="post" asp-controller="Auth" asp-action="SignUp" novalidate>
 			<h1>Create Account</h1>
 			<p>Already have an account?<a asp-controller="Auth" asp-action="SignIn">Sign in here</a></p>
+			@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+			
 			<div class="content">
 				<div id="form-firstname" class="input-group">
 					<label asp-for="Form.FirstName"></label>
@@ -52,3 +53,4 @@
 	</div>
 </section>
 
+@await Html.PartialAsync("~/Views/Shared/Sections/_ValidationScriptPartial.cshtml")
