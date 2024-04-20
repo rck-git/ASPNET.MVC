@@ -361,11 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/MyWebApplication/wwwroot/images/account/p_892c90e7-d49e-468b-a6d8-9c6439b40865_0ea600e4-f467-4d58-aee1-927e74d1a926.svg
-/MyWebApplication/wwwroot/images/account/p_892c90e7-d49e-468b-a6d8-9c6439b40865_1b2f65ab-27ae-4f97-bff0-3e664ec3e377.svg
-/MyWebApplication/wwwroot/images/account/p_892c90e7-d49e-468b-a6d8-9c6439b40865_28d7b64e-5c28-4985-b626-b52f999c6966.png
-/MyWebApplication/wwwroot/images/account/p_892c90e7-d49e-468b-a6d8-9c6439b40865_5a649310-af61-4379-ac03-ec3d8267efd0.png
-/MyWebApplication/wwwroot/images/account/p_892c90e7-d49e-468b-a6d8-9c6439b40865_717488cf-8aa5-4b02-91c5-b3303b21584f.png
-/MyWebApplication/wwwroot/images/account/p_892c90e7-d49e-468b-a6d8-9c6439b40865_9b8276e6-b8eb-4aac-b39e-20cc92cc8c12.svg
-/MyWebApplication/wwwroot/images/account/p_892c90e7-d49e-468b-a6d8-9c6439b40865_b4f166d1-661b-444d-8da7-04c05816b709.svg
-/MyWebApplication/wwwroot/images/account/p_892c90e7-d49e-468b-a6d8-9c6439b40865_ecb6ccbe-3ebd-453d-9455-f4de88a7effa.png
+<<<<<<< courses
+/MyWebApplication/wwwroot/images/account/
+=======
+SignIn
+/MyWebApplication/wwwroot/images/account
+main
+>>>>>>> main

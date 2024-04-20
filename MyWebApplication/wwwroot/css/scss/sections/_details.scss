@@ -1,13 +1,13 @@
 ﻿#details {
     width: 100%;
-    margin-top: 5rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
-    padding-bottom:15rem;
+    margin-bottom: 3rem;
+
 
     aside {
-        text-align:center;
+        text-align: center;
         display: flex;
         width: 60%;
         flex-direction: column;
@@ -16,10 +16,27 @@
         align-content: center;
         justify-self: end;
 
-        img {
-            justify-self: center;
-            justify-content: center;
-            align-self:center;
+
+
+        form {
+            background-color: white;
+            position: relative;
+            left: 140px;
+            top: -55px;
+            border-radius: 25px;
+            width: fit-content;
+        }
+
+        div {
+            profile-info {
+
+                img {
+                    position: relative;
+                    justify-self: center;
+                    justify-content: center;
+                    align-self: center;
+                }
+            }
         }
 
         nav {
@@ -27,16 +44,22 @@
             a {
                 display: block;
                 width: 100%;
-                text-align:start;
-                padding-left:2rem;
+                text-align: start;
+                padding-left: 15px;
+            }
+
+            i {
+                padding-right: 5px;
             }
         }
     }
 
     .container {
-
-
-
+        padding-left: 150px;
+        padding-top: 5rem;
+        margin-left: 10px;
+        padding-bottom: 5rem;
+        border-left: 1px solid #d4d7e5;
 
         p {
             a {
@@ -58,9 +81,12 @@
             form {
                 padding: 1rem;
 
+
                 .content {
                     display: grid;
                     gap: 1rem;
+                    padding-bottom: 3rem;
+                    border-bottom: 1px solid #d4d7e5;
                     grid-template-columns: 1fr 1fr;
                     grid-template-areas:
                         "firstname lastname" "email phone" "bio bio" "confirm confirm";
@@ -101,10 +127,7 @@
                     gap: 1rem 2rem;
                     grid-template-columns: 1fr 1fr;
                     grid-template-areas:
-                        "Adressline-1 Adressline-1" 
-                        "Adressline-2 Adressline-2"
-                        "postalcode city" 
-                        "confirm confirm";
+                        "Adressline-1 Adressline-1" "Adressline-2 Adressline-2" "postalcode city" "confirm confirm";
 
 
                     #form-Adressline-1 {
@@ -117,6 +140,14 @@
 
                     #form-postalcode {
                         grid-area: postalcode;
+
+                        span.field-validation-error {
+                           
+                            right: -20px;
+                            
+                        }
+
+                        
                     }
 
                     #form-city {

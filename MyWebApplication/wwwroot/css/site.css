@@ -806,11 +806,10 @@ footer .container .social-media {
 
 #details {
   width: 100%;
-  margin-top: 5rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
-  padding-bottom: 15rem;
+  margin-bottom: 3rem;
 }
 #details aside {
   text-align: center;
@@ -822,7 +821,16 @@ footer .container .social-media {
   align-content: center;
   justify-self: end;
 }
-#details aside img {
+#details aside form {
+  background-color: white;
+  position: relative;
+  left: 140px;
+  top: -55px;
+  border-radius: 25px;
+  width: fit-content;
+}
+#details aside div profile-info img {
+  position: relative;
   justify-self: center;
   justify-content: center;
   align-self: center;
@@ -831,7 +839,17 @@ footer .container .social-media {
   display: block;
   width: 100%;
   text-align: start;
-  padding-left: 2rem;
+  padding-left: 15px;
+}
+#details aside nav i {
+  padding-right: 5px;
+}
+#details .container {
+  padding-left: 150px;
+  padding-top: 5rem;
+  margin-left: 10px;
+  padding-bottom: 5rem;
+  border-left: 1px solid #d4d7e5;
 }
 #details .container p a {
   padding-left: 0.5rem;
@@ -852,6 +870,8 @@ footer .container .social-media {
 #details .container #forms form .content {
   display: grid;
   gap: 1rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #d4d7e5;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "firstname lastname" "email phone" "bio bio" "confirm confirm";
 }
@@ -892,6 +912,9 @@ footer .container .social-media {
 }
 #details .container #forms form #content-address #form-postalcode {
   grid-area: postalcode;
+}
+#details .container #forms form #content-address #form-postalcode span.field-validation-error {
+  right: -20px;
 }
 #details .container #forms form #content-address #form-city {
   grid-area: city;

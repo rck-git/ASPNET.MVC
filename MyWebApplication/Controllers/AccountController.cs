@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MyWebApplication.Models.Forms;
 using MyWebApplication.Models.Views;
+using System;
 
 namespace MyWebApplication.Controllers;
 
@@ -69,7 +70,7 @@ public class AccountController : Controller
 		if (viewModel.AddressInfo != null)
 		{
 			if (viewModel.AddressInfo.Addressline_1 != null && viewModel.AddressInfo.PostalCode != null && viewModel.AddressInfo.City != null)
-			{
+			{	
 				var userEntity = await _userManager.GetUserAsync(User);
 				if (userEntity != null)
 				{
@@ -199,6 +200,31 @@ public class AccountController : Controller
 			Console.WriteLine(ex.Message);
 			return null!;
 		}
+	}
+
+	[HttpPost]
+	public async Task<IActionResult> UploadProfileImage(IFormFile file)
+	{
+		var user = await _userManager.GetUserAsync(User);
+
+		if (user != null && file != null && file.Length != 0)
+		{
+			var fileName = $"p_{user.Id}_{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+			var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/account", fileName);
+
+			using var fs = new FileStream(filePath, FileMode.Create);
+			await file.CopyToAsync(fs);
+
+			user.ProfileImage = fileName;
+
+			await _userManager.UpdateAsync(user);
+		}
+		else 
+		{
+			TempData["StatusMessage"] = "Unable to upload image"; 
+		}
+		
+		return RedirectToAction("Details", "Account");
 	}
 }
 
