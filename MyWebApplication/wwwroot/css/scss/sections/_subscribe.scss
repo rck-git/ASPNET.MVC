@@ -1,0 +1,105 @@
+﻿.subscribe {
+    background-color: $theme-opacity;
+    padding: 5rem 0;
+
+    .container {
+        width: 60%;
+
+        .title {
+            display: flex;
+            justify-content: start;
+            position:relative;
+            margin-bottom:2rem;
+           
+
+            h2 {
+                width:70%;
+            }
+
+            img {
+                width: 10%;
+                position:absolute;
+                right:20%;
+                justify-self: center;
+                align-self: center;
+            }
+        }
+    }
+
+    form {
+
+        .alternative {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+
+            h4 {
+                justify-self: start;
+                padding-right:3rem;
+                width: 30%;
+            }
+
+            .options {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                .checkbox-group {
+
+                    input:checked {
+                        accent-color: $theme;
+                    }
+
+                    #AdvertisingUpdates:checked {
+                        accent-color: $theme;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .form-email {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+
+            .input-group {
+                position: relative;
+
+                i {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 10px;
+                }
+
+                #Email {
+                    padding-left: 2.5rem;
+                }
+            }
+
+            .btn.btn-theme {
+                margin-left: 1rem;
+                width: 20%;
+                padding: 1rem;
+            }
+        }
+
+        .status-message {
+            margin-top: 1rem;
+
+
+            span {
+                color: $theme
+            }
+
+            a {
+                text-decoration: underline;
+                color: $theme;
+
+                &:hover {
+                    color: $theme-secondary;
+                }
+            }
+        }
+    }
+}

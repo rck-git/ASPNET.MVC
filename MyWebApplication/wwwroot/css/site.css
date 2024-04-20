@@ -1128,3 +1128,83 @@ footer .container .social-media {
   padding-top: 2rem;
   margin-right: 2rem;
 }
+
+.subscribe {
+  background-color: rgba(99, 101, 241, 0.0784313725);
+  padding: 5rem 0;
+}
+.subscribe .container {
+  width: 60%;
+}
+.subscribe .container .title {
+  display: flex;
+  justify-content: start;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.subscribe .container .title h2 {
+  width: 70%;
+}
+.subscribe .container .title img {
+  width: 10%;
+  position: absolute;
+  right: 20%;
+  justify-self: center;
+  align-self: center;
+}
+.subscribe form .alternative {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.subscribe form .alternative h4 {
+  justify-self: start;
+  padding-right: 3rem;
+  width: 30%;
+}
+.subscribe form .alternative .options {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.subscribe form .alternative .options .checkbox-group input:checked {
+  accent-color: #6366F1;
+}
+.subscribe form .alternative .options .checkbox-group #AdvertisingUpdates:checked {
+  accent-color: #6366F1;
+  color: white;
+}
+.subscribe form .form-email {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.subscribe form .form-email .input-group {
+  position: relative;
+}
+.subscribe form .form-email .input-group i {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
+.subscribe form .form-email .input-group #Email {
+  padding-left: 2.5rem;
+}
+.subscribe form .form-email .btn.btn-theme {
+  margin-left: 1rem;
+  width: 20%;
+  padding: 1rem;
+}
+.subscribe form .status-message {
+  margin-top: 1rem;
+}
+.subscribe form .status-message span {
+  color: #6366F1;
+}
+.subscribe form .status-message a {
+  text-decoration: underline;
+  color: #6366F1;
+}
+.subscribe form .status-message a:hover {
+  color: #8B5CF6;
+}
