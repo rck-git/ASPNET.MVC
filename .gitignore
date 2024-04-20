@@ -361,6 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+<<<<<<< courses
+/MyWebApplication/wwwroot/images/account/
+=======
 SignIn
 /MyWebApplication/wwwroot/images/account
 main
+>>>>>>> main
