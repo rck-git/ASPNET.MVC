@@ -70,7 +70,7 @@ public class AccountController : Controller
 		if (viewModel.AddressInfo != null)
 		{
 			if (viewModel.AddressInfo.Addressline_1 != null && viewModel.AddressInfo.PostalCode != null && viewModel.AddressInfo.City != null)
-			{
+			{	
 				var userEntity = await _userManager.GetUserAsync(User);
 				if (userEntity != null)
 				{
