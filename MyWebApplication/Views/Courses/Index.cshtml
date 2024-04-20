@@ -1,0 +1,102 @@
+﻿@model CourseIndexViewModel
+
+
+@{
+	ViewData["Title"] = "Courses";
+}
+
+<div id="header">
+	@await Html.PartialAsync("~/Views/Shared/Sections/_HeaderPartial.cshtml")
+</div>
+
+<section class="courses">
+	<div class="container">
+		<div class="sub-nav">
+			<a asp-action="Index" asp-controller="Home"><i class="fa-light fa-house"></i>Home</a>
+			<p>»</p>
+			<a asp-action="Index" asp-controller="Courses">Courses</a>
+		</div>
+		<div class="top-box">
+			<h1>Courses</h1>
+			<form id="form-filters">
+				<select name="category" select id="category" title="category">
+					<option>All categories</option>
+				</select>
+				<div class="input-search-group">
+					<input id="searchQuery" name="searchQuery" placeholder="Search courses" />
+					<i class="fa-regular fa-search"></i>
+				</div>
+			</form>
+		</div>
+
+		<div class="course-items">
+			@if (Model.Courses != null)
+			{
+				@foreach(var course in Model.Courses)
+				{
+					<a class="course" asp-action="Details" asp-asp-controller="Courses" asp-route-id="@course.Id">
+						
+
+						<div class="image-box">
+							@if (course.IsBestseller)
+							{
+								<div class="bestseller">Best Seller</div>
+							}
+							<button class="btn btn-circle bookmark"><i class="fa-regular fa-bookmark"></i></button>
+							<img src="~/images/courses/@course.Image" alt="@course.Title" />
+
+						</div>
+
+						<div class="content">
+							<h5 class="title">@course.Title</h5>
+							<p class="author">By @course.Author</p>
+							<div class="pricing">
+								@if (!string.IsNullOrEmpty(course.DiscountPrice))
+								{
+									<div class="discount">
+										@course.DiscountPrice
+									</div>
+								}
+								<div class="price @(!string.IsNullOrEmpty(course.DiscountPrice)? "discount-enabled" : "")">
+									@course.Price
+								</div>
+							</div>
+							<div class="content-footer">
+								<div class"hours">
+									<i class="fa-regular fa-clock"></i>@course.Hours hours
+								</div>
+								<div class="likes">
+									<i class="fa-regular fa-thumbs-up"></i> @course.LikesInProcent (@course.LikesInNumbers)
+								</div>
+							</div>
+						</div>
+
+					</a>
+				}
+			}
+		</div>
+	</div>
+
+	<div class="lower-nav-courses">
+		<a asp-action="Index" asp-asp-controller="Courses" class="previous"><</a>
+		<a asp-action="Index" asp-asp-controller="Courses" >1</a>
+		<a asp-action="Index" asp-asp-controller="Courses">2</a>
+		<a asp-action="Index" asp-asp-controller="Courses" class="hover">3</a>
+		<a asp-action="Index" asp-asp-controller="Courses" class="active">4</a>
+		<a asp-action="Index" asp-asp-controller="Courses">5</a>
+		<a asp-action="Index" asp-asp-controller="Courses" class="next">></a>
+	</div>
+	<div class="ready-box container">
+		<div  class="text-ready">
+			<p>Ready to get started?</p>
+			<h1>Take Your <span>Skills</span> to the <br />Next Level</h1>
+			<button class="btn btn-theme-s work-with">Work with us</button>
+		</div>
+		<img src="~/images/courses/group.svg" alt="lady with cat and laptop" />
+		
+	</div>
+</section>
+
+<div id="footer">
+@await Html.PartialAsync("~/Views/Shared/Sections/_FooterPartial.cshtml")
+</div>
