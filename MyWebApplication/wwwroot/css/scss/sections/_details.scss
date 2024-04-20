@@ -17,15 +17,20 @@
         justify-self: end;
 
 
-
         form {
-            background-color: white;
             position: relative;
-            left: 140px;
-            top: -55px;
-            border-radius: 25px;
-            width: fit-content;
+
+            .btn.btn-circle {
+                background-color: white;
+                position: absolute;
+                left: 150px;
+                top: -53px;
+                border-radius: 25px;
+                width: fit-content;
+                border: 0.3px solid grey;
+            }
         }
+
 
         div {
             profile-info {
@@ -142,12 +147,8 @@
                         grid-area: postalcode;
 
                         span.field-validation-error {
-                           
                             right: -20px;
-                            
                         }
-
-                        
                     }
 
                     #form-city {
