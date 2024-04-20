@@ -66,33 +66,44 @@ function checkboxValidator(element) {
 
 }
 
+
+
 let forms = document.querySelectorAll('form')
-let inputs = forms[0].querySelectorAll('input')
+console.log(forms)
 
-inputs.forEach(input => {
-    if (input.dataset.val === 'true') {
+forms.forEach(form => {
 
-        if (input.type === 'checkbox') {
-            input.addEventListener('change', (e) => {
-                checkboxValidator(e.target)
-            })
+    let inputs = form.querySelectorAll('input')
+
+    console.log(inputs)
+
+    inputs.forEach(input => {
+        if (input.dataset.val === 'true') {
+
+            if (input.type === 'checkbox') {
+                input.addEventListener('change', (e) => {
+                    checkboxValidator(e.target)
+                })
+            }
+            else {
+                input.addEventListener('keyup', (e) => {
+                    switch (e.target.type) {
+                        case 'text':
+                            textValidator(e.target)
+                            console.log("textvalidator event listener")
+                            break;
+
+                        case 'email':
+                            emailValidator(e.target)
+                            break;
+
+                        case 'password':
+                            passwordValidator(e.target)
+                            break;
+                    }
+                })
+            }
         }
-        else {
-            input.addEventListener('keyup', (e) => {
-                switch (e.target.type) {
-                    case 'text':
-                        textValidator(e.target)
-                        break;
 
-                    case 'email':
-                        emailValidator(e.target)
-                        break;
-
-                    case 'password':
-                        passwordValidator(e.target)
-                        break;
-                }
-            })
-        }
-    }
+    })
 })
