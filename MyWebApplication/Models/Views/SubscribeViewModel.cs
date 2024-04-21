@@ -4,9 +4,10 @@ namespace MyWebApplication.Models.Views;
 
 public class SubscribeViewModel
 {
-	[Required]
+	[Required(ErrorMessage ="Enter a valid email.")]
 	[EmailAddress]
 	[Display(Name = "E-mail address", Prompt = "Your Email")]
+
 	public string Email { get; set; } = null!;
 	public bool DailyNewsletter { get; set; }
 	public bool AdvertisingUpdates {  get; set; }

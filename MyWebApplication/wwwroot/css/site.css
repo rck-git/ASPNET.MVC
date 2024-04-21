@@ -1193,6 +1193,10 @@ footer .container .social-media {
 .subscribe form .form-email .input-group #Email {
   padding-left: 2.5rem;
 }
+.subscribe form .form-email .input-group .field-validation-error {
+  padding-top: 15px;
+  padding-right: 15px;
+}
 .subscribe form .form-email .btn.btn-theme {
   margin-left: 1rem;
   width: 20%;

@@ -8,18 +8,18 @@
         .title {
             display: flex;
             justify-content: start;
-            position:relative;
-            margin-bottom:2rem;
-           
+            position: relative;
+            margin-bottom: 2rem;
+
 
             h2 {
-                width:70%;
+                width: 70%;
             }
 
             img {
                 width: 10%;
-                position:absolute;
-                right:20%;
+                position: absolute;
+                right: 20%;
                 justify-self: center;
                 align-self: center;
             }
@@ -35,7 +35,7 @@
 
             h4 {
                 justify-self: start;
-                padding-right:3rem;
+                padding-right: 3rem;
                 width: 30%;
             }
 
@@ -74,6 +74,12 @@
 
                 #Email {
                     padding-left: 2.5rem;
+                }
+
+                .field-validation-error{
+                    padding-top:15px;
+                    padding-right:15px;
+
                 }
             }
 

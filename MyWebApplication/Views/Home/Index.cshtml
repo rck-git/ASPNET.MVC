@@ -16,13 +16,8 @@
 
 @await Html.PartialAsync("~/Views/Shared/Sections/_SubscribeToNewsletter.cshtml", Model.Subscribe)
 
-
-@* <partial name="~/Views/Shared/Sections/_SubscribeToNewsletter.cshtml" /> *@
+@await Html.PartialAsync("~/Views/Shared/Sections/_ValidationScriptPartial.cshtml")
     
 <div id="footer">
     @await Html.PartialAsync("~/Views/Shared/Sections/_FooterPartial.cshtml")
 </div>
-@* 
-<div id="showcase">
-    <partial name="~/Views/Shared/Sections/_Showcase.cshtml" />
-</div> *@
