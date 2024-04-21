@@ -1,7 +1,9 @@
 ﻿@model SignInViewModel
 
 @*This is the view Signin.*@
-
+<div id="header">
+	@await Html.PartialAsync("~/Views/Shared/Sections/_HeaderPartial.cshtml")
+</div>
 <section id="signin">
 	<div class="container">
 
@@ -39,4 +41,9 @@
 
 	</div>
 </section>
+
+<div id="footer">
+	@await Html.PartialAsync("~/Views/Shared/Sections/_FooterPartial.cshtml")
+</div>
+
 @await Html.PartialAsync("~/Views/Shared/Sections/_ValidationScriptPartial.cshtml")

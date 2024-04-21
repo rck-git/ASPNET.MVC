@@ -3,6 +3,10 @@
 
 @*This is the view Signup.*@
 
+<div id="header">
+	@await Html.PartialAsync("~/Views/Shared/Sections/_HeaderPartial.cshtml")
+</div>
+
 <section id="signup">
 	<div class="container">
 		<form method="post" asp-controller="Auth" asp-action="SignUp" novalidate>
@@ -54,3 +58,7 @@
 </section>
 
 @await Html.PartialAsync("~/Views/Shared/Sections/_ValidationScriptPartial.cshtml")
+
+<div id="footer">
+	@await Html.PartialAsync("~/Views/Shared/Sections/_FooterPartial.cshtml")
+</div>
