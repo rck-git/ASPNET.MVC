@@ -1,0 +1,56 @@
+﻿.integrate {
+
+    .container {
+        padding: 2rem;
+
+        .integrate-box {
+            .top-text {
+                display: flex;
+                flex-direction: column;
+                padding: 2rem 0;
+                justify-items: center;
+                justify-content: center;
+                align-items: center;
+
+                h2 {
+                    display: flex;
+                }
+
+                p {
+                    text-align: center;
+                    display: flex;
+                    width: 70%;
+                    justify-self: center;
+                    color: grey;
+                }
+            }
+
+            .top-tools {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 1rem;
+
+                .tool {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    position: relative;
+                    padding: 2rem;
+                    border-radius: 5px;
+
+                    p {
+                        text-align: start;
+                    }
+
+                    img {
+                        padding-bottom: 2rem;
+                        width: 30%;
+                    }
+
+                    &:hover {
+                        @include theme-secondary-shadow;
+                    }
+                }
+            }
+        }
+    }
+}

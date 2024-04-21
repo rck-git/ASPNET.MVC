@@ -1,6 +1,11 @@
 ﻿
 @inject SignInManager<UserEntity> _signInManager
 
+@inject UserManager<UserEntity> UserManager
+@{
+    var user = await UserManager.GetUserAsync(User);
+}
+
 <header>
     <div class="container">
         <a asp-controller="Home" asp-action="Index"><img id="logo" src="~/images/home/solid-logo-header.svg" alt="company logo" /></a>
@@ -34,8 +39,8 @@
         <div class="account-buttons">
             @if(_signInManager.IsSignedIn(User))
             {
-                @* <img src="@Model.BasicInfo.ProfileImage" alt=@($"{Model.BasicInfo.FirstName}") /> *@
-                <a class="btn-theme" asp-controller="Account" asp-action="Details">My account</a>
+
+                <a class="btn-header-profile-pic" asp-controller="Account" asp-action="Details"><img src="~/images/account/@user.ProfileImage" alt="@user.Firstname" )/></a>
             }
             else
             {

@@ -1,0 +1,37 @@
+﻿.manage {
+
+
+
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+
+
+        .manage-box {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+
+            img {
+                width: 50%;
+            }
+
+            .manage-text {
+                padding-left: 7rem;
+                align-content: center;
+
+                p {
+
+
+                    i {
+                        padding-right: 15px;
+                        color: $theme;
+                    }
+                }
+            }
+        }
+    }
+}

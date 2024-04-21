@@ -472,6 +472,9 @@ header .container .account-buttons {
     display: flex;
   }
 }
+header .container .account-buttons .btn-header-profile-pic img {
+  width: 40%;
+}
 header .container .btn-mobile {
   grid-area: mobile;
   display: block;
@@ -1207,4 +1210,86 @@ footer .container .social-media {
 }
 .subscribe form .status-message a:hover {
   color: #8B5CF6;
+}
+
+.download {
+  margin: 3rem 0;
+  padding: 3rem;
+  background-color: rgba(99, 101, 241, 0.0784313725);
+}
+.download .container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.download .container img {
+  width: 60%;
+}
+
+.manage .container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.manage .container .manage-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.manage .container .manage-box img {
+  width: 50%;
+}
+.manage .container .manage-box .manage-text {
+  padding-left: 7rem;
+  align-content: center;
+}
+.manage .container .manage-box .manage-text p i {
+  padding-right: 15px;
+  color: #6366F1;
+}
+
+.integrate .container {
+  padding: 2rem;
+}
+.integrate .container .integrate-box .top-text {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+.integrate .container .integrate-box .top-text h2 {
+  display: flex;
+}
+.integrate .container .integrate-box .top-text p {
+  text-align: center;
+  display: flex;
+  width: 70%;
+  justify-self: center;
+  color: grey;
+}
+.integrate .container .integrate-box .top-tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.integrate .container .integrate-box .top-tools .tool {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  padding: 2rem;
+  border-radius: 5px;
+}
+.integrate .container .integrate-box .top-tools .tool p {
+  text-align: start;
+}
+.integrate .container .integrate-box .top-tools .tool img {
+  padding-bottom: 2rem;
+  width: 30%;
+}
+.integrate .container .integrate-box .top-tools .tool:hover {
+  box-shadow: 0px 8px 18px -8px rgba(19, 16, 34, 0.15);
 }

@@ -10,7 +10,12 @@
     
 @await Html.PartialAsync("~/Views/Shared/Sections/_Showcase.cshtml", Model.Showcase)
 @await Html.PartialAsync("~/Views/Shared/Sections/_Features.cshtml", Model.Features)
+@await Html.PartialAsync("~/Views/Shared/Sections/_Manage.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Sections/_Download.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Sections/_Integrate.cshtml")
+
 @await Html.PartialAsync("~/Views/Shared/Sections/_SubscribeToNewsletter.cshtml", Model.Subscribe)
+
 
 @* <partial name="~/Views/Shared/Sections/_SubscribeToNewsletter.cshtml" /> *@
     
